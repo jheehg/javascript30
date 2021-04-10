@@ -59,7 +59,7 @@
     */
     // 4. How many years did all the inventors live all together?
     const four = inventors.reduce((total, cur) => total + (cur.passed - cur.year), 0);
-    // inventors의 요소는 정수가 아닌 배열이므로 두번쨰 인자로 반드시 초깃값인 0을 지정해준다.
+    // inventors의 요소는 정수가 아닌 객체이므로 reduce함수의 두번째 인자로 반드시 초깃값인 0을 지정해준다.
     console.log(four);
     
     // 5. Sort the inventors by years lived
@@ -88,7 +88,7 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-    const eight = data.reduce(function(init, cur) {
+    const eight = data.reduce((init, cur) => {
       if(!init[cur]) init[cur] = 0; 
       // init.cur로 접근하면 cur이름 자체가 속성으로 들어가게 되므로 []로 접근.
       // []로 속성 지정할때 오류 생기는 경우는 cur이 선언되지 않은 변수일때.
